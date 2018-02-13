@@ -1,4 +1,5 @@
 import time
+
 def make_3gs_form(verb):
     verblength = int(len(verb) - 1) ##finds length of inputed word, min 1 because indexes
     if verb[verblength] == "y": ##if last leter is y
@@ -9,6 +10,7 @@ def make_3gs_form(verb):
     else:
         newverb = verb + "s"
     return(newverb) ##output
+
 def make_ing_form(verb):
     verblength = int(len(verb) - 1) ##finds length of inputed word, min 1 because indexes
     if verb[verblength] == "e":
@@ -18,7 +20,13 @@ def make_ing_form(verb):
         newverb = verb[:(verblength - 1)]
         newverb = verb + "ying"
     return(newverb)
-verb = input("Enter verb to make plural ")
-verb = make_3gs_form(verb) ##sets verb equal to function
+
+mode = input("enter mode 1 or 2")
+if mode == 1:
+    verb = input("Enter verb to make plural ")
+    verb = make_3gs_form(verb) ##sets verb equal to function
+else:
+    verb = input("Enter verb to make plural ")
+    verb = make_ing_form(verb) ##sets verb equal to function
 print(verb) ##prints output
 time.sleep(4)
